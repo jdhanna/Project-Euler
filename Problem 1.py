@@ -13,6 +13,6 @@ def findSum(n,fact):
     return fact*size*(size + 1)/2
 
 def findSumB(n):
-    return findSum(n, 3) + findSum(n, 5) - findSum(n, 15)
+    return int(findSum(n, 3) + findSum(n, 5) - findSum(n, 15))
 
 print(findSumB(1000))

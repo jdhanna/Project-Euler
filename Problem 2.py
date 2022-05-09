@@ -30,7 +30,7 @@ def fastEvenFibSum(cap):
     return ans
 
 start = time.time()
-print(evenFibSum(4000000))
-mid = time.time()
+#print(evenFibSum(4000000))
+#mid = time.time()
 print(fastEvenFibSum(4000000))
 end = time.time()
