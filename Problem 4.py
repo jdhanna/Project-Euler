@@ -1,4 +1,5 @@
-# Question: Find the largest palindrome made from the product of two 3-digit numbers.
+# Problem Statement:
+# Find the largest palindrome made from the product of two 3-digit numbers.
 
 # Solution: This is pretty simple. Multiply all the 3 digit numbers by each other and find the largest that happen to be a palindrome.
 
