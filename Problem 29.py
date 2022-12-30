@@ -4,12 +4,21 @@
 
 # Solution: Python's "set" data structure will ensure we don't allow duplicates.
 
-def sequenceLength(aMax, bMax):
+def sequenceLength(n):
+    aMax = n
+    bMax = n
     sequence = set()
     for a in range(2, aMax+1):
         for b in range(2, bMax+1):
             sequence.add(a**b)
-    return len(sequence)
+    return aMax, len(sequence)
 
-print(f"The test sequence has a length of {sequenceLength(5, 5)}")
-print(f"The problem sequence has a length of {sequenceLength(100, 100)}")
+from time import time
+from datetime import timedelta
+
+stime = time()
+n, nterms = sequenceLength(100)
+etime = time()
+elapsed = timedelta(seconds=etime - stime)
+problem_name = "Problem 29"
+print(f"{problem_name}: {n=}, {nterms=}.  Elapsed time={elapsed}")

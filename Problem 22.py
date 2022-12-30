@@ -14,20 +14,23 @@ def readFile(path):
         rawText = rawText[0]
     return rawText
 
+
 def stringToList(rawText):
     names = list()
-    a=0
-    b=1
-    while b != -1: # Some care is needed here to strip out the quotes and commas, and not incorrectly cut off the last name.
-        c = rawText[a+1:].find('"')
-        nextName = rawText[a+1:a+c+1]
+    a = 0
+    b = 1
+    while b != -1:  # Some care is needed here to strip out the quotes and commas, and not incorrectly cut off the last name.
+        c = rawText[a + 1:].find('"')
+        nextName = rawText[a + 1:a + c + 1]
         names.append(nextName)
-        b=rawText[a:].find(',')
+        b = rawText[a:].find(',')
         a = a + b + 1
     return names
 
+
 def alphabetize(names):
     return sorted(names)
+
 
 def scoreName(str):
     ans = 0
@@ -35,19 +38,21 @@ def scoreName(str):
         ans += ord(letter) - 64
     return ans
 
+
 def weightAllNames(lst):
     ans = 0
     for i in range(0, len(lst)):
-        #print(f"{i+1}th Name: {lst[i]}")
-        ans = ans + (i+1)*(scoreName(lst[i]))
+        # print(f"{i+1}th Name: {lst[i]}")
+        ans = ans + (i + 1) * (scoreName(lst[i]))
     return ans
 
+
 def main():
-    rawText = readFile('Data/p022_names.txt')
-    names = stringToList(rawText)
+    raw_test = readFile("Data/p022_names.txt")
+    names = stringToList(raw_test)
     names = alphabetize(names)
     print(weightAllNames(names))
     return
 
-main()
 
+main()
