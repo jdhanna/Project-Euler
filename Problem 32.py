@@ -16,15 +16,14 @@ for a in range(1, 100):
     for b in range(100, 10000):
         strb = str(b)
         product = a*b
-        check = list()
-        for digit in stra + strb + str(product):
-            check.append(int(digit))
-        if sorted(check) == sorted(range(1, 10)):
+        strp = str(product)
+        s = stra + strb + strp
+        check = [int(digit) for digit in s]
+        if sorted(check) == list(range(1, 10)):
             solutionSet.add(product)
 
 etime = time()
 elapsed = round(1000 * (etime - stime), 3)
 
 print(solutionSet)
-print(f"Elapsed time={elapsed} milliseconds")
-print(f"There are {len(solutionSet)} pandigital products. Their sum is {sum(solutionSet)}")
+print(f"There are {len(solutionSet)} pandigital products. Their sum is {sum(solutionSet)}. Elapsed time={elapsed} milliseconds")

@@ -27,16 +27,19 @@ def doesCancel(a, b):
             return False
     return False
 
+from time import time
+stime = time()
 solution = set()
 for a in range(10,100):
     for b in range(a, 100):
         if doesCancel(a,b):
             solution.add((a,b))
-
+etime = time()
+elapsed = round(1000*(etime-stime), 3)
 print(f"There are {len(solution)} 2-digit digit-cancelling fractions. They are as follows:")
 for item in solution:
     print(f"{item[0]}/{item[1]}")
-print('')
+print(f"Elapsed time = {elapsed} milliseconds")
 
 # We'll factor this in lowest terms. We know the factors all have to be less than 100, so we can just multiply and check with brute force.
 # This process is a little cumbersome, but not too bad. It could be avoided by importing the "fractions" package in python.
